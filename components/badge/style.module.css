@@ -1,0 +1,30 @@
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.badge::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(
+    170deg,
+    rgba(0, 0, 0, 0.2) -6.28%,
+    rgba(0, 0, 0, 0.4) 9.84%,
+    #000 38.59%,
+    rgba(0, 0, 0, 0.4) 66.93%,
+    transparent 122.67%
+  );
+  -webkit-mask: linear-gradient(#000, #000) content-box,
+    linear-gradient(#000, #000);
+  mask: linear-gradient(#000, #000) content-box, linear-gradient(#000, #000);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}

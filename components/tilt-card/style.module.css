@@ -1,0 +1,36 @@
+.root {
+  --glow-bg: radial-gradient(circle at 50% -20%, #ffffff22, #0000000f);
+  --glow-opacity: 0;
+  transform: rotate3d(0);
+  position: relative;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: none;
+  touch-action: pan-y;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 7%), 0 2px 4px rgb(0 0 0 / 5%),
+    0 12px 24px rgb(0 0 0 / 5%);
+}
+
+.root:active {
+  transform: none !important;
+}
+
+.root:active .glow {
+  opacity: 0.1;
+}
+
+.glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: var(--glow-bg);
+  opacity: var(--glow-opacity);
+  transition: opacity 0.3s ease;
+  mix-blend-mode: plus-lighter;
+  z-index: 2;
+}
